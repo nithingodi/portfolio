@@ -1,95 +1,83 @@
 /* styles.css */
 
 /* Global Reset & Base */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background-color: #0f172a;
   color: #e2e8f0;
   line-height: 1.6;
-  padding-bottom: 2rem;
 }
+a { text-decoration: none; color: inherit; }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Navigation Bar */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
   background-color: #1e293b;
-  border-bottom: 1px solid #334155;
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 .navbar .logo {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
-  color: #38bdf8;
+  color: #3b82f6;
 }
-.nav-links {
+.navbar .nav-links {
   list-style: none;
   display: flex;
   gap: 1.5rem;
 }
-.nav-links a {
+.navbar .nav-links li a {
   color: #cbd5e1;
-  transition: color 0.3s;
+  font-weight: 500;
+  transition: color 0.2s;
 }
-.nav-links a:hover,
-.nav-links a.active {
-  color: #38bdf8;
+.navbar .nav-links li a:hover,
+.navbar .nav-links li a.active {
+  color: #3b82f6;
 }
+.button {
+  background-color: #3b82f6;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+.button:hover { background-color: #2563eb; }
 
-/* Hero Section */
+/* Hero Section for Home */
 .hero {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 4rem 2rem;
-  background: linear-gradient(to right, #0f172a, #1e293b);
 }
-.hero-text {
-  flex: 1;
-  max-width: 600px;
-}
-.hero-text h1 {
+.hero h1 {
   font-size: 3rem;
-  color: #38bdf8;
+  color: #3b82f6;
 }
-.hero-text h2 {
-  font-size: 1.3rem;
-  font-weight: normal;
-  margin-bottom: 1rem;
+.hero h2 {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
   color: #e2e8f0;
 }
-.hero-text p {
+.hero p {
+  max-width: 600px;
+  margin-top: 1rem;
   color: #94a3b8;
-  margin-bottom: 1.5rem;
 }
-.hero-image img {
-  width: 250px;
-  height: 250px;
-  border: 4px solid #38bdf8;
+.profile-img {
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
+  border: 4px solid #3b82f6;
   object-fit: cover;
-}
-.btn {
-  background-color: #38bdf8;
-  color: #0f172a;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px;
-  font-weight: bold;
 }
 
 /* Section Titles */
@@ -97,117 +85,95 @@ a {
   text-align: center;
   font-size: 2rem;
   margin: 3rem 0 1rem;
-  color: #38bdf8;
+  color: #3b82f6;
 }
 
-/* Projects Grid (Home) */
+/* Projects Grid (home) */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   padding: 0 2rem;
-  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 .card {
   background-color: #1e293b;
-  border: 1px solid #334155;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1.25rem;
+  color: #f1f5f9;
   transition: transform 0.2s;
   position: relative;
-  overflow: hidden;
 }
-.card:hover {
-  transform: translateY(-5px);
-}
-.card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-}
-.card h3 {
-  color: #38bdf8;
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-.card p {
-  color: #cbd5e1;
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-}
-.card a.view-details {
-  color: #38bdf8;
-  font-weight: bold;
-  text-decoration: underline;
-}
+.card:hover { transform: translateY(-4px); }
+.card h3 { margin-bottom: 0.5rem; }
 
-/* Experience Section */
-.experience-block {
+.card.yellow { border-left: 6px solid #facc15; }
+.card.green  { border-left: 6px solid #10b981; }
+.card.red    { border-left: 6px solid #ef4444; }
+.card.blue   { border-left: 6px solid #3b82f6; }
+.card.purple { border-left: 6px solid #a855f7; }
+.card.orange { border-left: 6px solid #f97316; }
+
+/* Work Experience (timeline) */
+.timeline { padding: 2rem; max-width: 800px; margin: auto; }
+.timeline-item {
+  position: relative;
   margin-bottom: 2rem;
+  padding-left: 2rem;
 }
-.experience-block h3 {
-  font-size: 1.2rem;
+.timeline-item:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background-color: #3b82f6;
+  border-radius: 50%;
 }
-.experience-block .location {
-  color: #94a3b8;
-  font-style: italic;
-}
-.experience-block .date {
-  color: #64748b;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-.experience-block ul {
-  margin-left: 1.5rem;
-  color: #cbd5e1;
-}
+.timeline-item h3 { color: #e2e8f0; margin-bottom: 0.25rem; }
+.timeline-item span { font-size: 0.9rem; color: #94a3b8; }
+.timeline-item p { margin: 0.5rem 0; color: #cbd5e1; }
+.timeline-item ul { margin-left: 1rem; list-style: disc; color: #cbd5e1; }
 
-/* Skills Section */
-.skills-grid {
+/* Skills */
+.skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  margin-top: 1.5rem;
-  padding: 0 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 0 2rem 3rem;
 }
-.skill-card {
+.skill {
   background-color: #1e293b;
-  border: 1px solid #334155;
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
+  font-weight: 500;
   color: #e2e8f0;
-  font-weight: bold;
 }
 
-/* Contact Section */
-#contact p {
-  margin-bottom: 0.5rem;
-}
+/* Contact */
 .contact-card {
   background-color: #1e293b;
   max-width: 400px;
-  margin: auto auto auto auto;
+  margin: auto 0 auto auto;
   padding: 2rem;
   border-radius: 8px;
   color: #e2e8f0;
 }
-.contact-card a {
-  color: #38bdf8;
-}
+.contact-card p { margin: 0.5rem 0; }
+.contact-card a { color: #3b82f6; }
 
 /* Footer */
 footer {
-  background-color: #1e293b;
+  background-color: #0f172a;
   text-align: center;
   padding: 1rem;
+  font-size: 0.85rem;
   color: #64748b;
-  margin-top: 2rem;
 }
 
-/* Project Detail Pages */
+/* Project Detail Page Layout */
 .project-hero {
   position: relative;
   background-size: cover;
@@ -227,6 +193,7 @@ footer {
 .project-hero .navbar {
   position: relative;
   background: transparent;
+  margin: 0;
   padding: 1rem 2rem;
 }
 .project-hero-content {
@@ -269,9 +236,7 @@ footer {
   font-weight: 500;
 }
 
-.project-section {
-  margin-bottom: 1.5rem;
-}
+.project-section { margin-bottom: 1.5rem; }
 .project-section h2 {
   color: #38bdf8;
   margin-bottom: 0.75rem;
