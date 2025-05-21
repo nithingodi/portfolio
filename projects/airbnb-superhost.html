@@ -1,19 +1,77 @@
 <!DOCTYPE html>
-<html>
-<head><title>Airbnb Superhost Program</title><link rel="stylesheet" href="../styles.css"></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Airbnb Superhost Program Analysis | Sai Nithin Godi</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
 <body>
-  <a href="../index.html">← Back to Projects</a>
-  <h1>Airbnb Superhost Program Analysis</h1>
-  <h2>Project Overview</h2>
-  <p>Used Lasso regression on 10K+ listings to quantify Superhost density impact on revenue for non-Superhosts.</p>
-  <h2>The Challenge</h2>
-  <p>Determine the optimal Superhost share that boosts neighborhood-level earnings without saturation.</p>
-  <h2>Solution Approach</h2>
-  <p>Standardized data, modeled in scikit-learn, segmented by tract and seasonality.</p>
-  <h2>Results & Impact</h2>
-  <ul>
-    <li>🔍 22.2% optimal density found</li>
-    <li>💵 $264.26/month gain per 1% increase</li>
-  </ul>
+  <nav class="navbar">
+    <div class="logo">Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#projects" class="active">Projects</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn">Contact Me</a>
+  </nav>
+
+  <section class="hero">
+    <img src="../assets/airbnb.jpg" alt="Airbnb Superhost" class="hero-bg"/>
+    <div class="hero-text">
+      <h1>Airbnb Superhost Program Analysis</h1>
+      <p>Lasso regression showed each 1% rise in Superhost share increases $264.26/month in revenue.</p>
+    </div>
+  </section>
+
+  <section class="project-detail">
+    <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+    <div class="project-section">
+      <h2>Project Overview</h2>
+      <p>Applied Lasso regression on 10K+ listings to quantify the Superhost network effect on neighborhood revenue.</p>
+    </div>
+
+    <div class="project-section">
+      <h2>The Challenge</h2>
+      <p>Determine the optimal Superhost density that maximizes non-Superhost earnings without oversaturating neighborhoods.</p>
+    </div>
+
+    <div class="project-section">
+      <h2>Solution Approach</h2>
+      <ul>
+        <li>Cleaned and standardized listing features in Python.</li>
+        <li>Ran Lasso in scikit-learn; segmented w.r.t. tract-level Superhost share and seasonal factors.</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h2>Results &amp; Impact</h2>
+      <p>Identified a 22.2% density threshold; each 1% increase in Superhost share delivered $264.26 more monthly revenue to non-Superhosts, peaking after a 2.1-month lag and driving an 18.1% Q2 uplift.</p>
+    </div>
+
+    <aside class="project-details-sidebar">
+      <h3>Project Details</h3>
+      <p><strong>Tools Used:</strong> Python, Lasso Regression, Data Visualization, scikit-learn</p>
+      <p><strong>Key Impact:</strong> $264.26/month revenue increase per 1% Superhost share</p>
+
+      <h3>More Projects</h3>
+      <ul>
+        <li><a href="retail-campaign.html">Retail Campaign Optimization</a></li>
+        <li><a href="ev-infrastructure.html">EV Infrastructure Planning</a></li>
+        <li><a href="airbnb-superhost.html" class="active">Airbnb Superhost Analysis</a></li>
+        <li><a href="bankruptcy-prediction.html">Bankruptcy Prediction Model</a></li>
+        <li><a href="market-expansion.html">Market Expansion Study</a></li>
+        <li><a href="otg-simulation.html">OTG Pod Operations Simulation</a></li>
+      </ul>
+    </aside>
+  </section>
+
+  <footer>
+    <p>© 2025 Sai Nithin Godi. All rights reserved.</p>
+  </footer>
 </body>
 </html>
