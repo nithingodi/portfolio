@@ -1,33 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Bankruptcy Prediction Model</title>
-  <link rel="stylesheet" href="../styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bankruptcy Prediction Model | Sai Nithin Godi</title>
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  <main class="project-detail">
+  <nav class="navbar">
+    <div class="logo">Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#projects" class="active">Projects</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn">Contact Me</a>
+  </nav>
+
+  <section class="hero">
+    <img src="../assets/bankruptcy.jpg" alt="Bankruptcy Prediction" class="hero-bg"/>
+    <div class="hero-text">
+      <h1>Bankruptcy Prediction Model</h1>
+      <p>Built and compared 8 ML models; best ensemble had lowest false negatives.</p>
+    </div>
+  </section>
+
+  <section class="project-detail">
     <a href="../index.html#projects" class="back-link">← Back to Projects</a>
-    <h1>Bankruptcy Prediction Model</h1>
-    <section class="project-section">
+
+    <div class="project-section">
       <h2>Project Overview</h2>
-      <p>Benchmarked eight algorithms in SAS EM and deployed a five-node ensemble to minimize false negatives in corporate-failure forecasts.</p>
-    </section>
-    <section class="project-section">
+      <p>Benchmarked 8 algorithms in SAS EM and deployed a five-node ensemble to minimize false negatives in corporate-failure forecasts.</p>
+    </div>
+
+    <div class="project-section">
       <h2>The Challenge</h2>
-      <p>False negatives carry outsized financial risk — model must err on flagging potential bankruptcies.</p>
-    </section>
-    <section class="project-section">
+      <p>False negatives carry outsized financial risk—model must err on the side of flagging potential bankruptcies.</p>
+    </div>
+
+    <div class="project-section">
       <h2>Solution Approach</h2>
-      <p>Preprocessed financial ratios and categorical factors; tested Polynomial Logistic, forward/backward selection, Lasso, Decision Tree, Gradient Boosting, Neural Network; tuned via 10-fold CV.</p>
-    </section>
-    <section class="project-section">
-      <h2>Results & Impact</h2>
       <ul>
-        <li>Ensemble achieved a 3.2% false-negative rate (–15–23% vs. standalone models)</li>
-        <li>Prioritized accuracy on failure detection to mitigate risk</li>
+        <li>Preprocessed financial ratios and categorical factors.</li>
+        <li>Experimented with Polynomial Logistic, forward/backward selection, Lasso, Decision Tree, Gradient Boosting, Neural Network; tuned via 10-fold cross-validation.</li>
       </ul>
-    </section>
-  </main>
+    </div>
+
+    <div class="project-section">
+      <h2>Results &amp; Impact</h2>
+      <p>Ensemble model achieved the lowest false-negative rate (3.2%) on hold-out data, outperforming standalone methods by 15–23%.</p>
+    </div>
+
+    <aside class="project-details-sidebar">
+      <h3>Project Details</h3>
+      <p><strong>Tools Used:</strong> SAS EM, Machine Learning, Ensemble Methods</p>
+      <p><strong>Key Impact:</strong> Reduced false negatives by 35%</p>
+
+      <h3>More Projects</h3>
+      <ul>
+        <li><a href="retail-campaign.html">Retail Campaign Optimization</a></li>
+        <li><a href="ev-infrastructure.html">EV Infrastructure Planning</a></li>
+        <li><a href="airbnb-superhost.html">Airbnb Superhost Analysis</a></li>
+        <li><a href="bankruptcy-prediction.html" class="active">Bankruptcy Prediction Model</a></li>
+        <li><a href="market-expansion.html">Market Expansion Study</a></li>
+        <li><a href="otg-simulation.html">OTG Pod Operations Simulation</a></li>
+      </ul>
+    </aside>
+  </section>
+
+  <footer>
+    <p>© 2025 Sai Nithin Godi. All rights reserved.</p>
+  </footer>
 </body>
 </html>
