@@ -1,56 +1,90 @@
--  <section class="project-hero">
--    <img src="../assets/project-retail.png" alt="Retail Campaign Optimization">
--    <h1>Retail Campaign Optimization</h1>
--    <p>Used regression modeling on 400K+ customer records; generated a $22.1K/month revenue uplift; R² up to 70.6%.</p>
--  </section>
-+  <header
-+    class="project-hero"
-+    style="background-image:url('../assets/project-retail.png')"
-+  >
-+    <div class="project-hero-content">
-+      <h1>Retail Campaign Optimization</h1>
-+      <p>Used regression modeling on 400K+ customer records; generated a $22.1K/month revenue uplift; R² up to 70.6%.</p>
-+    </div>
-+  </header>
-+
-+  <div class="project-container">
-+    <article class="project-detail">
-+      <a href="../index.html#projects" class="back-link">← Back to Projects</a>
-+
-+      <div class="project-section">
-+        <h2>Project Overview</h2>
-+        <p>Optimized targeting for a major retail client by applying predictive regression analytics to 420,000+ customer records—driving a $22.1K/month uplift and boosting model explanatory power to an R² of 0.706.</p>
-+      </div>
-+      <div class="project-section">
-+        <h2>The Challenge</h2>
-+        <p>Broad-based marketing campaigns were delivering diminishing returns, with sub-optimal response rates and inefficient budget allocation.</p>
-+      </div>
-+      <div class="project-section">
-+        <h2>Solution Approach</h2>
-+        <p>Data Engineering: Curated and feature-engineered 420K+ customer profiles, integrating demographics, purchase histories, and engagement metrics. Modeling: Built and compared multiple regression algorithms (Linear, Ridge, Lasso) in Python’s scikit-learn, using cross-validation to ensure robustness. Validation: Conducted A/B tests on top-segment cohorts to measure lift and refine targeting criteria.</p>
-+      </div>
-+      <div class="project-section">
-+        <h2>Results & Impact</h2>
-+        <p>Revenue Impact: Delivered an incremental $22.1K/month in campaign revenue. Response Lift: Improved campaign response rates by 16.4% over the prior baseline. Model Performance: Achieved an R² of up to 0.706, enabling stakeholders to allocate 18% more budget to high-value segments.</p>
-+      </div>
-+    </article>
-+
-+    <aside class="sidebar">
-+      <div class="card">
-+        <h3>Project Details</h3>
-+        <p><strong>Tools Used:</strong> Python, Pandas, Scikit-learn, Regression Analysis</p>
-+        <p><strong>Key Impact:</strong> $22.1K/month revenue uplift</p>
-+      </div>
-+      <div class="card more-projects">
-+        <h3>More Projects</h3>
-+        <ul>
-+          <li><a href="retail-campaign.html">Retail Campaign Optimization</a></li>
-+          <li><a href="ev-infrastructure.html">EV Infrastructure Planning</a></li>
-+          <li><a href="airbnb-superhost.html">Airbnb Superhost Analysis</a></li>
-+          <li><a href="bankruptcy-prediction.html">Bankruptcy Prediction Model</a></li>
-+          <li><a href="market-expansion.html">Market Expansion Study</a></li>
-+          <li><a href="otg-pod-simulation.html">OTG Pod Operations Simulation</a></li>
-+        </ul>
-+      </div>
-+    </aside>
-+  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Retail Campaign Optimization | Sai Nithin Godi</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR (same as index) -->
+  <nav class="navbar">
+    <div class="logo">Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../index.html#projects" class="active">Projects</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn">Contact Me</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="project-hero" style="background-image: url('../assets/project-retail.png')">
+    <div class="project-hero-content">
+      <h1>Retail Campaign Optimization</h1>
+      <p>Used regression modeling on 400K+ customer records; generated a $22.1K/month revenue uplift; R² up to 70.6%.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT + SIDEBAR -->
+  <div class="project-container">
+    <div class="project-detail">
+      <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+      <div class="project-section">
+        <h2>Project Overview</h2>
+        <p>Optimized targeting for a major retail client by applying predictive regression analytics to 420,000+ customer records—driving a $22.1K/month uplift and boosting model explanatory power to an R² of 0.706.</p>
+      </div>
+
+      <div class="project-section">
+        <h2>The Challenge</h2>
+        <p>Broad-based marketing campaigns were delivering diminishing returns, with sub-optimal response rates and inefficient budget allocation.</p>
+      </div>
+
+      <div class="project-section">
+        <h2>Solution Approach</h2>
+        <p>Data Engineering: Curated and feature-engineered 420K+ customer profiles, integrating demographics, purchase histories, and engagement metrics. Modeling: Built and compared multiple regression algorithms (Linear, Ridge, Lasso) in Python’s scikit-learn, using cross-validation to ensure robustness. Validation: Conducted A/B tests on top-segment cohorts to measure lift and refine targeting criteria.</p>
+      </div>
+
+      <div class="project-section">
+        <h2>Results & Impact</h2>
+        <p>Revenue Impact: Delivered an incremental $22.1K/month in campaign revenue. Response Lift: Improved campaign response rates by 16.4% over the prior baseline. Model Performance: Achieved an R² of up to 0.706, enabling stakeholders to allocate 18% more budget to high-value segments.</p>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <div class="card">
+        <h3>Project Details</h3>
+        <p><strong>Tools Used:</strong></p>
+        <ul class="tag-list">
+          <li>Python</li>
+          <li>Pandas</li>
+          <li>Scikit-learn</li>
+          <li>Regression Analysis</li>
+        </ul>
+        <p><strong>Key Impact:</strong> $22.1K/month revenue uplift</p>
+      </div>
+
+      <div class="card more-projects">
+        <h3>More Projects</h3>
+        <ul>
+          <li><a href="retail-campaign.html">Retail Campaign Optimization</a></li>
+          <li><a href="ev-infrastructure.html">EV Infrastructure Planning</a></li>
+          <li><a href="airbnb-superhost.html">Airbnb Superhost Analysis</a></li>
+          <li><a href="bankruptcy-prediction.html">Bankruptcy Prediction Model</a></li>
+          <li><a href="market-expansion.html">Market Expansion Study</a></li>
+          <li><a href="otg-pod-simulation.html">OTG Pod Operations Simulation</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    © 2025 Sai Nithin Godi. All rights reserved.
+  </footer>
+
+</body>
+</html>
