@@ -265,3 +265,134 @@ footer {
   text-align: center;
   padding: 1rem;
 }
+/* Project Detail Pages */
+.project-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.project-hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+  max-width: 800px;
+}
+.project-hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+.project-hero-content p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+}
+
+/* two-column layout */
+.project-container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+}
+@media (max-width: 900px) {
+  .project-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* the main detail pane */
+.project-detail {
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 2rem;
+  color: #e2e8f0;
+}
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #38bdf8;
+}
+.back-link:hover {
+  text-decoration: underline;
+}
+.project-section + .project-section {
+  margin-top: 1.5rem;
+}
+.project-section h2 {
+  color: #38bdf8;
+  margin-bottom: 0.75rem;
+}
+.project-section p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* sidebar cards */
+.sidebar .card {
+  background: #1e293b;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+.sidebar .card h3 {
+  color: #e2e8f0;
+  margin-bottom: 0.75rem;
+}
+.sidebar .card p,
+.sidebar .card ul {
+  color: #94a3b8;
+}
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+.tag-list li {
+  background: #0f172a;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #38bdf8;
+}
+
+/* more‐projects list */
+.more-projects ul {
+  list-style: none;
+  padding: 0;
+}
+.more-projects ul li {
+  margin-bottom: 0.5rem;
+}
+.more-projects ul li a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+.more-projects ul li a:hover {
+  color: #38bdf8;
+}
+.project-grid {
+  overflow-x: auto;
+  scroll-padding: 1rem;
+  padding-bottom: 1rem;
+}
+.project-grid::-webkit-scrollbar {
+  height: 6px;
+}
+.project-grid::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
