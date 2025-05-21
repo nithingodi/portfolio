@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sai Nithin Godi | Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -18,18 +18,34 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <a href="#contact" class="btn">Contact Me</a>
   </nav>
 
   <!-- HERO -->
   <section id="home" class="hero">
     <div class="hero-text">
       <h1>Sai Nithin Godi</h1>
-      <h2>Business & Data Analyst</h2>
-      <p>A data-driven Business Analyst with 2+ years of experience in manufacturing and analytics consulting. Skilled in Python, Excel VBA, Tableau, and SQL, with a proven track record of improving supply chain efficiency.</p>
-      <a href="#projects" class="btn">View Projects</a>
+      <h2>Business &amp; Data Analyst</h2>
+      <p>
+        A data-driven Business Analyst with 2+ years of experience in
+        manufacturing and analytics consulting. Skilled in Python, Excel VBA,
+        Tableau, and SQL, with a proven track record of improving supply chain
+        efficiency.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn">View Projects</a>
+        <a
+          href="https://linkedin.com/in/nithingodi"
+          class="btn btn-icon"
+          target="_blank"
+        >
+          <!-- swap in your SVG or PNG -->
+          <img src="assets/linkedin-icon.png" alt="LinkedIn" />
+        </a>
+      </div>
     </div>
     <div class="hero-image">
-      <img src="assets/profile.png" alt="Sai Nithin Godi">
+      <img src="assets/profile.png" alt="Sai Nithin Godi" />
     </div>
   </section>
 
@@ -37,25 +53,131 @@
   <section id="projects">
     <h2 class="section-title">Projects</h2>
     <div class="project-grid">
-      <!-- repeat this card for each project -->
-      <div class="card">
-        <img src="assets/retail-campaign.png" alt="Retail Campaign Optimization">
-        <div class="card-content">
+      <!-- Retail Campaign -->
+      <div class="project-card">
+        <div class="project-image">
+          <img
+            src="assets/project-retail.png"
+            alt="Retail Campaign Optimization"
+          />
+          <a
+            href="projects/retail-campaign.html"
+            class="overlay-btn"
+            >View Details</a
+          >
+        </div>
+        <div class="project-content">
           <h3>Retail Campaign Optimization</h3>
-          <p>Used regression modeling on 400K+ customer records; generated a $22.1K/month revenue uplift; R² up to 70.6%.</p>
-          <a href="projects/retail-campaign.html" class="view-details">View Project Details</a>
+          <p>
+            Used regression modeling on 400K+ customer records; generated a
+            $22.1K/month revenue uplift; R² up to 70.6%.
+          </p>
         </div>
       </div>
+
       <!-- EV Infrastructure -->
-      <div class="card">
-        <img src="assets/ev-infrastructure.png" alt="EV Infrastructure Planning">
-        <div class="card-content">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/project-ev.png" alt="EV Infrastructure Planning" />
+          <a
+            href="projects/ev-infrastructure.html"
+            class="overlay-btn"
+            >View Details</a
+          >
+        </div>
+        <div class="project-content">
           <h3>EV Infrastructure Planning</h3>
-          <p>Mapped 200K+ EV records and built dashboards for underserved Washington counties.</p>
-          <a href="projects/ev-infrastructure.html" class="view-details">View Project Details</a>
+          <p>
+            Mapped 200K+ EV records and built dashboards for underserved
+            Washington counties.
+          </p>
         </div>
       </div>
-      <!-- …and so on for the other 4 cards… -->
+
+      <!-- Airbnb Superhost -->
+      <div class="project-card">
+        <div class="project-image">
+          <img
+            src="assets/project-airbnb.png"
+            alt="Airbnb Superhost Program Analysis"
+          />
+          <a
+            href="projects/airbnb-superhost.html"
+            class="overlay-btn"
+            >View Details</a
+          >
+        </div>
+        <div class="project-content">
+          <h3>Airbnb Superhost Program Analysis</h3>
+          <p>
+            Lasso regression showed each 1% rise in Superhost share increases
+            $264.26/month in revenue.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bankruptcy -->
+      <div class="project-card">
+        <div class="project-image">
+          <img
+            src="assets/project-bankruptcy.png"
+            alt="Bankruptcy Prediction Model"
+          />
+          <a
+            href="projects/bankruptcy-prediction.html"
+            class="overlay-btn"
+            >View Details</a
+          >
+        </div>
+        <div class="project-content">
+          <h3>Bankruptcy Prediction Model</h3>
+          <p>
+            Built and compared 8 ML models; best ensemble had lowest false
+            negatives.
+          </p>
+        </div>
+      </div>
+
+      <!-- Market Expansion -->
+      <div class="project-card">
+        <div class="project-image">
+          <img
+            src="assets/project-market.png"
+            alt="Market Expansion Study"
+          />
+          <a
+            href="projects/market-expansion.html"
+            class="overlay-btn"
+            >View Details</a
+          >
+        </div>
+        <div class="project-content">
+          <h3>Market Expansion Study</h3>
+          <p>
+            Analyzed 1.2M+ foot-traffic records in Missouri; found Wright
+            County with top demand-to-competitor ratio.
+          </p>
+        </div>
+      </div>
+
+      <!-- OTG Pod Simulation -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/project-otg.png" alt="OTG Pod Operations Simulation" />
+          <a
+            href="projects/otg-pod-simulation.html"
+            class="overlay-btn"
+            >View Details</a
+          >
+        </div>
+        <div class="project-content">
+          <h3>OTG Pod Operations Simulation</h3>
+          <p>
+            Identified billing bottleneck; cut wait time by 94.8% with a third
+            server.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -65,13 +187,17 @@
     <div class="timeline">
       <div class="timeline-item">
         <h3>Business Analyst (Industry Practicum, Purdue)</h3>
-        <span class="location">Retail Firm, West Lafayette, IN</span> • <span class="date">Jan 2025 – Apr 2025</span>
+        <span class="location">Retail Firm, West Lafayette, IN</span
+        > • <span class="date">Jan 2025 – Apr 2025</span>
         <ul>
-          <li>Engineered and analyzed 400K+ customer records to build uplift models in Python…</li>
+          <li>
+            Engineered and analyzed 400K+ customer records to build uplift
+            models in Python…
+          </li>
           <!-- other bullets -->
         </ul>
       </div>
-      <!-- other experience items… -->
+      <!-- repeat for other roles… -->
     </div>
   </section>
 
@@ -82,7 +208,7 @@
       <div class="skill-card">Data Analysis</div>
       <div class="skill-card">Business Intelligence</div>
       <div class="skill-card">Data Visualization</div>
-      <div class="skill-card">SQL & Database Management</div>
+      <div class="skill-card">SQL &amp; Database Management</div>
       <div class="skill-card">Python Programming</div>
       <div class="skill-card">Project Management</div>
     </div>
@@ -93,7 +219,12 @@
     <h2 class="section-title">Get In Touch</h2>
     <div class="contact-card">
       <p><strong>Email:</strong> nithingodi3@gmail.com</p>
-      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/nithingodi" target="_blank">/in/nithingodi</a></p>
+      <p>
+        <strong>LinkedIn:</strong>
+        <a href="https://linkedin.com/in/nithingodi" target="_blank"
+          >/in/nithingodi</a
+        >
+      </p>
     </div>
   </section>
 
@@ -102,13 +233,15 @@
     © 2025 Sai Nithin Godi. All rights reserved.
   </footer>
 
-  <!-- S​: Smooth scroll & active-link JS -->
+  <!-- Smooth-scroll & active-link -->
   <script>
     const links = document.querySelectorAll('.nav-links a');
-    links.forEach(l => l.addEventListener('click', e => {
-      links.forEach(x=>x.classList.remove('active'));
-      e.target.classList.add('active');
-    }));
+    links.forEach((l) =>
+      l.addEventListener('click', (e) => {
+        links.forEach((x) => x.classList.remove('active'));
+        e.target.classList.add('active');
+      })
+    );
   </script>
 </body>
 </html>
