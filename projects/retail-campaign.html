@@ -1,73 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Retail Campaign Optimization</title>
-  <link rel="stylesheet" href="../styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Retail Campaign Optimization | Sai Nithin Godi</title>
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  <div class="project-hero" style="background-image:url('../assets/retail-bg.jpg');">
-    <nav class="navbar">
-      <div class="logo">Portfolio</div>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../index.html#projects" class="active">Projects</a></li>
-        <li><a href="../index.html#experience">Experience</a></li>
-        <li><a href="../index.html#skills">Skills</a></li>
-        <li><a href="../index.html#contact">Contact</a></li>
-      </ul>
-      <a href="../index.html#contact" class="btn">Contact Me</a>
-    </nav>
-    <div class="project-hero-content">
+  <nav class="navbar">
+    <div class="logo">Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#projects" class="active">Projects</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn">Contact Me</a>
+  </nav>
+
+  <!-- Banner -->
+  <section class="hero">
+    <img src="../assets/retail-campaign.jpg" alt="Retail Campaign" class="hero-bg"/>
+    <div class="hero-text">
       <h1>Retail Campaign Optimization</h1>
-      <p>Used regression modeling on 400K+ customer records; generated a $22.1K/month revenue uplift; R² up to 0.706.</p>
+      <p>Used regression modeling on 400K+ customer records; generated a $22.1K/month revenue uplift; R² up to 70.6%.</p>
     </div>
-  </div>
+  </section>
 
-  <div class="project-container">
-    <div class="project-detail">
-      <a href="../index.html#projects" class="back-link">&larr; Back to Projects</a>
+  <section class="project-detail">
+    <a href="../index.html#projects" class="back-link">← Back to Projects</a>
 
-      <div class="project-section">
-        <h2>Project Overview</h2>
-        <p>Optimized targeting for a major retail client by applying predictive regression analytics to 420,000+ customer records—driving a $22.1K/month uplift and boosting model explanatory power to an R² of 0.706.</p>
-      </div>
-      <div class="project-section">
-        <h2>The Challenge</h2>
-        <p>Broad-based marketing campaigns were delivering diminishing returns with sub-optimal response rates and inefficient budget allocation.</p>
-      </div>
-      <div class="project-section">
-        <h2>Solution Approach</h2>
-        <ul>
-          <li>Data Engineering: Curated and feature-engineered 420K+ customer profiles…</li>
-          <li>Modeling: Built and compared multiple regression algorithms in Python…</li>
-          <li>Validation: Conducted A/B tests on top segments to measure lift…</li>
-        </ul>
-      </div>
-      <div class="project-section">
-        <h2>Results & Impact</h2>
-        <p>Delivered an incremental $22.1K/month in campaign revenue; improved response lift by 16.4% over baseline; achieved R² up to 0.706, enabling stakeholders to allocate 18% more budget to high-value segments.</p>
-      </div>
+    <div class="project-section">
+      <h2>Project Overview</h2>
+      <p>Optimized targeting for a major retail client by applying predictive regression analytics to 420,000+ customer records—driving a $22.1K/month uplift and boosting model explanatory power to an R² of 0.706.</p>
     </div>
 
-    <aside class="sidebar">
-      <div class="card project-details">
-        <h3>Project Details</h3>
-        <p><strong>Tools Used:</strong> Python, Pandas, Scikit-learn, Regression Analysis</p>
-        <p><strong>Key Impact:</strong> $22.1K/month revenue uplift</p>
-      </div>
-      <div class="card more-projects">
-        <h3>More Projects</h3>
-        <ul>
-          <li><a href="retail-campaign.html">Retail Campaign Optimization</a></li>
-          <li><a href="ev-infrastructure.html">EV Infrastructure Planning</a></li>
-          <!-- etc… -->
-        </ul>
-      </div>
+    <div class="project-section">
+      <h2>The Challenge</h2>
+      <p>Broad-based marketing campaigns were delivering diminishing returns, with sub-optimal response rates and inefficient budget allocation.</p>
+    </div>
+
+    <div class="project-section">
+      <h2>Solution Approach</h2>
+      <ul>
+        <li>Data Engineering: Curated and feature-engineered 420K+ customer profiles, integrating demographics, purchase histories, and engagement metrics.</li>
+        <li>Modeling: Built and compared multiple regression algorithms (Linear, Ridge, Lasso) in Python’s scikit-learn, using cross-validation to ensure robustness.</li>
+        <li>Validation: Conducted A/B tests on top-segment cohorts to measure lift and refine targeting criteria.</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h2>Results &amp; Impact</h2>
+      <p>Delivered an incremental $22.1K/month in campaign revenue. Improved campaign response rates by 16.4% over the prior baseline. Achieved an R² of up to 0.706, enabling stakeholders to allocate 18% more budget to high-value segments.</p>
+    </div>
+
+    <aside class="project-details-sidebar">
+      <h3>Project Details</h3>
+      <p><strong>Tools Used:</strong> Python, Pandas, Scikit-learn, Regression Analysis</p>
+      <p><strong>Key Impact:</strong> $22.1K/month revenue uplift</p>
+
+      <h3>More Projects</h3>
+      <ul>
+        <li><a href="retail-campaign.html" class="active">Retail Campaign Optimization</a></li>
+        <li><a href="ev-infrastructure.html">EV Infrastructure Planning</a></li>
+        <li><a href="airbnb-superhost.html">Airbnb Superhost Analysis</a></li>
+        <li><a href="bankruptcy-prediction.html">Bankruptcy Prediction Model</a></li>
+        <li><a href="market-expansion.html">Market Expansion Study</a></li>
+        <li><a href="otg-simulation.html">OTG Pod Operations Simulation</a></li>
+      </ul>
     </aside>
-  </div>
 
-  <footer>© 2025 Sai Nithin Godi. All rights reserved.</footer>
+  </section>
+
+  <footer>
+    <p>© 2025 Sai Nithin Godi. All rights reserved.</p>
+  </footer>
 </body>
 </html>
