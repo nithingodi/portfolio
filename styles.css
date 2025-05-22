@@ -555,3 +555,16 @@ footer {
   /* you already have flex-direction: column; just bump the gap */
   gap: 2.5rem;  /* or whatever vertical spacing you prefer */
 }
+.exp-bullets {
+  /* use outside bullets (not “inside” which will hang them under the text) */
+  list-style-type: disc;
+  list-style-position: outside;
+
+  /* indent the entire list a bit from the left edge of the card */
+  margin: 1rem 0 0 1.5rem;
+  padding: 0;
+
+  /* keep your existing look/feel */
+  color: #e2e8f0;
+  line-height: 1.6;
+}
