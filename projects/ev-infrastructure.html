@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>EV Infrastructure Planning | Sai Nithin Godi</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css"/>
 </head>
 <body>
   <nav class="navbar">
     <div class="logo">Portfolio</div>
     <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#home">Home</a></li>
       <li><a href="../index.html#projects" class="active">Projects</a></li>
       <li><a href="../index.html#experience">Experience</a></li>
       <li><a href="../index.html#skills">Skills</a></li>
@@ -19,62 +19,55 @@
     <a href="#contact" class="btn">Contact Me</a>
   </nav>
 
-  <section class="hero">
-    <img src="../assets/ev-charging.jpg" alt="EV Infrastructure" class="hero-bg"/>
-    <div class="hero-text">
+  <header class="project-hero" style="background-image:url('../assets/ev-infrastructure.png')">
+    <div class="project-hero-content">
       <h1>EV Infrastructure Planning</h1>
       <p>Mapped 200K+ EV records and built dashboards for underserved Washington counties.</p>
     </div>
-  </section>
+  </header>
 
-  <section class="project-detail">
-    <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+  <div class="project-container">
+    <article class="project-detail">
+      <a href="../index.html#projects" class="back-link">← Back to Projects</a>
 
-    <div class="project-section">
-      <h2>Project Overview</h2>
-      <p>Developed geospatial dashboards on 200K+ EV registrations and 2.5K charging stations to target underserved Washington counties.</p>
-    </div>
+      <div class="project-section">
+        <h2>Project Overview</h2>
+        <p>Developed geospatial dashboards on 200K+ EV registrations and 2.5K charging stations to target underserved Washington counties.</p>
+      </div>
+      <div class="project-section">
+        <h2>The Challenge</h2>
+        <p>Washington needed to allocate limited IIJA funding to counties where EV adoption outpaced charging access.</p>
+      </div>
+      <div class="project-section">
+        <h2>Solution Approach</h2>
+        <p>Curated six datasets (EV registrations, station locations, population density, traffic flows, road networks, jurisdictions) in SQL and Python; built interactive Tableau dashboards to score each county on vehicles-per-station and demand indicators.</p>
+      </div>
+      <div class="project-section">
+        <h2>Results & Impact</h2>
+        <p>Flagged 5 priority counties (Snohomish, Kittitas, Skagit, Cowlitz, Lewis) with demand-to-capacity ratios &gt;2.1×; recommendations adopted into the state’s 2024 charging-network rollout plan.</p>
+      </div>
+    </article>
 
-    <div class="project-section">
-      <h2>The Challenge</h2>
-      <p>Washington needed to allocate limited IIJA funding to counties where EV adoption outstripped charging access.</p>
-    </div>
-
-    <div class="project-section">
-      <h2>Solution Approach</h2>
-      <ul>
-        <li>Curated six datasets (EV registrations, station locations, population density, traffic flows, road networks, jurisdictions) in SQL and Python.</li>
-        <li>Built interactive Tableau dashboards to score each county on vehicles-per-station and demand indicators.</li>
-      </ul>
-    </div>
-
-    <div class="project-section">
-      <h2>Results &amp; Impact</h2>
-      <ul>
-        <li>Flagged 5 priority counties (Snohomish, Kittitas, Skagit, Cowlitz, Lewis) with demand-to-capacity ratios &gt;2.1×.</li>
-        <li>Recommendations adopted into the state’s 2024 charging-network rollout plan.</li>
-      </ul>
-    </div>
-
-    <aside class="project-details-sidebar">
-      <h3>Project Details</h3>
-      <p><strong>Tools Used:</strong> Tableau, Geospatial Analysis, Dashboard Design, SQL, Python</p>
-      <p><strong>Key Impact:</strong> Identified 5 priority counties for EV infrastructure</p>
-
-      <h3>More Projects</h3>
-      <ul>
-        <li><a href="retail-campaign.html">Retail Campaign Optimization</a></li>
-        <li><a href="ev-infrastructure.html" class="active">EV Infrastructure Planning</a></li>
-        <li><a href="airbnb-superhost.html">Airbnb Superhost Analysis</a></li>
-        <li><a href="bankruptcy-prediction.html">Bankruptcy Prediction Model</a></li>
-        <li><a href="market-expansion.html">Market Expansion Study</a></li>
-        <li><a href="otg-simulation.html">OTG Pod Operations Simulation</a></li>
-      </ul>
+    <aside class="sidebar">
+      <div class="card">
+        <h3>Project Details</h3>
+        <p><strong>Tools Used:</strong> Tableau, Geospatial Analysis, Dashboard Design, SQL, Python</p>
+        <p><strong>Key Impact:</strong> Identified 5 priority counties for EV infrastructure</p>
+      </div>
+      <div class="card more-projects">
+        <h3>More Projects</h3>
+        <ul>
+          <li><a href="retail-campaign.html">Retail Campaign Optimization</a></li>
+          <li><a href="ev-infrastructure.html" class="active">EV Infrastructure Planning</a></li>
+          <li><a href="airbnb-superhost.html">Airbnb Superhost Analysis</a></li>
+          <li><a href="bankruptcy-prediction.html">Bankruptcy Prediction Model</a></li>
+          <li><a href="market-expansion.html">Market Expansion Study</a></li>
+          <li><a href="otg-pod-simulation.html">OTG Pod Operations Simulation</a></li>
+        </ul>
+      </div>
     </aside>
-  </section>
+  </div>
 
-  <footer>
-    <p>© 2025 Sai Nithin Godi. All rights reserved.</p>
-  </footer>
+  <footer>© 2025 Sai Nithin Godi. All rights reserved.</footer>
 </body>
 </html>
