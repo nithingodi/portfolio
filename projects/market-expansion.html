@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Market Expansion Study | Sai Nithin Godi</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css"/>
 </head>
 <body>
   <nav class="navbar">
     <div class="logo">Portfolio</div>
     <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#home">Home</a></li>
       <li><a href="../index.html#projects" class="active">Projects</a></li>
       <li><a href="../index.html#experience">Experience</a></li>
       <li><a href="../index.html#skills">Skills</a></li>
@@ -19,59 +19,55 @@
     <a href="#contact" class="btn">Contact Me</a>
   </nav>
 
-  <section class="hero">
-    <img src="../assets/market-expansion.jpg" alt="Market Expansion" class="hero-bg"/>
-    <div class="hero-text">
+  <header class="project-hero" style="background-image:url('../assets/market-expansion.png')">
+    <div class="project-hero-content">
       <h1>Market Expansion Study</h1>
       <p>Analyzed 1.2M+ foot-traffic records in Missouri; found Wright County with top demand-to-competitor ratio.</p>
     </div>
-  </section>
+  </header>
 
-  <section class="project-detail">
-    <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+  <div class="project-container">
+    <article class="project-detail">
+      <a href="../index.html#projects" class="back-link">← Back to Projects</a>
 
-    <div class="project-section">
-      <h2>Project Overview</h2>
-      <p>Analyzed 1.2M+ SafeGraph foot-traffic events across 114 Missouri counties to pinpoint optimal sites for limited-service restaurant growth.</p>
-    </div>
+      <div class="project-section">
+        <h2>Project Overview</h2>
+        <p>Analyzed 1.2M+ SafeGraph foot-traffic events across 114 Missouri counties to pinpoint optimal sites for limited-service restaurant growth.</p>
+      </div>
+      <div class="project-section">
+        <h2>The Challenge</h2>
+        <p>Locate counties with high consumer demand and low competitor density to maximize ROI on new restaurant openings.</p>
+      </div>
+      <div class="project-section">
+        <h2>Solution Approach</h2>
+        <p>Ran SQL queries in BigQuery to filter counties with &gt;50% middle-income households; calculated visits-per-location and competitor-count ratios.</p>
+      </div>
+      <div class="project-section">
+        <h2>Results & Impact</h2>
+        <p>Ranked Wright County #1 with a 2.5:1 demand-to-competitor ratio, forecasting a 14% higher first-year ROI relative to state average.</p>
+      </div>
+    </article>
 
-    <div class="project-section">
-      <h2>The Challenge</h2>
-      <p>Locate counties with high consumer demand and low competitor density to maximize ROI on new restaurant openings.</p>
-    </div>
-
-    <div class="project-section">
-      <h2>Solution Approach</h2>
-      <ul>
-        <li>Ran SQL queries in BigQuery to filter counties with >50% middle-income households.</li>
-        <li>Calculated visits-per-location and competitor count ratios.</li>
-      </ul>
-    </div>
-
-    <div class="project-section">
-      <h2>Results &amp; Impact</h2>
-      <p>Ranked Wright County #1 with a 2.5:1 demand-to-competitor ratio, forecasting a 14% higher first-year ROI relative to state average.</p>
-    </div>
-
-    <aside class="project-details-sidebar">
-      <h3>Project Details</h3>
-      <p><strong>Tools Used:</strong> Google BigQuery, SQL, Geospatial Analysis</p>
-      <p><strong>Key Impact:</strong> Identified optimal expansion location with 2.5:1 ratio</p>
-
-      <h3>More Projects</h3>
-      <ul>
-        <li><a href="retail-campaign.html">Retail Campaign Optimization</a></li>
-        <li><a href="ev-infrastructure.html">EV Infrastructure Planning</a></li>
-        <li><a href="airbnb-superhost.html">Airbnb Superhost Analysis</a></li>
-        <li><a href="bankruptcy-prediction.html">Bankruptcy Prediction Model</a></li>
-        <li><a href="market-expansion.html" class="active">Market Expansion Study</a></li>
-        <li><a href="otg-simulation.html">OTG Pod Operations Simulation</a></li>
-      </ul>
+    <aside class="sidebar">
+      <div class="card">
+        <h3>Project Details</h3>
+        <p><strong>Tools Used:</strong> Google BigQuery, SQL, Geospatial Analysis</p>
+        <p><strong>Key Impact:</strong> Identified optimal expansion location with 2.5:1 ratio</p>
+      </div>
+      <div class="card more-projects">
+        <h3>More Projects</h3>
+        <ul>
+          <li><a href="retail-campaign.html">Retail Campaign Optimization</a></li>
+          <li><a href="ev-infrastructure.html">EV Infrastructure Planning</a></li>
+          <li><a href="airbnb-superhost.html">Airbnb Superhost Analysis</a></li>
+          <li><a href="bankruptcy-prediction.html">Bankruptcy Prediction Model</a></li>
+          <li><a href="market-expansion.html" class="active">Market Expansion Study</a></li>
+          <li><a href="otg-pod-simulation.html">OTG Pod Operations Simulation</a></li>
+        </ul>
+      </div>
     </aside>
-  </section>
+  </div>
 
-  <footer>
-    <p>© 2025 Sai Nithin Godi. All rights reserved.</p>
-  </footer>
+  <footer>© 2025 Sai Nithin Godi. All rights reserved.</footer>
 </body>
 </html>
