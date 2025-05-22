@@ -1,3 +1,7 @@
+/* hide any old <a class="btn-icon"> so it no longer renders */
+.btn-icon {
+  display: none !important;
+}
 /* Reset & Base */
 * {
   box-sizing: border-box;
@@ -515,3 +519,30 @@ footer {
   padding-left: 1rem;
 }
 
+/* ————————————————————————————————————————————
+   Work-Experience: remove images, full-width cards, spaced out
+   ———————————————————————————————————————————— */
+
+/* 1) hide the image column entirely */
+.exp-image {
+  display: none !important;
+}
+
+/* 2) force each card to be one column of text */
+.experience-card {
+  /* if you’re still using grid you can simply collapse to one column: */
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  /* remove any leftover gutter reserved for the hidden image */
+  gap: 0 !important;
+  /* ensure the padding & background remain */
+  padding: 1.75rem;
+  border: 1px solid #334155;
+  border-radius: 10px;
+}
+
+/* 3) add vertical space between cards */
+.experience-cards {
+  /* you already have flex-direction: column; just bump the gap */
+  gap: 2.5rem;  /* or whatever vertical spacing you prefer */
+}
