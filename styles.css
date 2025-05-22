@@ -85,17 +85,26 @@ a {
 }
 
 /* Hero */
+/* Hero */
 .hero {
   display: flex;
-  flex-wrap: wrap;
-  align-items: right;
+  flex-wrap: wrap;               /* allows stacking on narrow screens */
+  align-items: center;           /* vertical centering */
+  justify-content: space-between;/* text left, image right */
   padding: 4rem 2rem;
   background: linear-gradient(to right, #0f172a, #1e293b);
 }
+
 .hero-text {
-  flex: 1;
+  flex: 1 1 600px;  /* grow/shrink but cap at ~600px */
   max-width: 600px;
 }
+
+.hero-image {
+  flex: 0 0 auto;   /* size to content */
+  margin-left: auto;/* shove it to the far right */
+}
+
 .hero-text h1 {
   font-size: 3rem;
   color: #38bdf8;
