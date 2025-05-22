@@ -117,6 +117,7 @@ a {
 .hero-image img {
   width: 250px;
   height: 250px;
+  align-items: right;
   object-fit: cover;
   border-radius: 50%;
   box-shadow:
