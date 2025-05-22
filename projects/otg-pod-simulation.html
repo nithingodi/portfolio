@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>OTG Pod Operations Simulation | Sai Nithin Godi</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css"/>
 </head>
 <body>
   <nav class="navbar">
     <div class="logo">Portfolio</div>
     <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#home">Home</a></li>
       <li><a href="../index.html#projects" class="active">Projects</a></li>
       <li><a href="../index.html#experience">Experience</a></li>
       <li><a href="../index.html#skills">Skills</a></li>
@@ -19,59 +19,55 @@
     <a href="#contact" class="btn">Contact Me</a>
   </nav>
 
-  <section class="hero">
-    <img src="../assets/otg-pod.jpg" alt="OTG Pod Simulation" class="hero-bg"/>
-    <div class="hero-text">
+  <header class="project-hero" style="background-image:url('../assets/otg-simulation.png')">
+    <div class="project-hero-content">
       <h1>OTG Pod Operations Simulation</h1>
       <p>Identified billing bottleneck; cut wait time by 94.8% with a third server.</p>
     </div>
-  </section>
+  </header>
 
-  <section class="project-detail">
-    <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+  <div class="project-container">
+    <article class="project-detail">
+      <a href="../index.html#projects" class="back-link">← Back to Projects</a>
 
-    <div class="project-section">
-      <h2>Project Overview</h2>
-      <p>Used newsvendor and queuing-theory models to optimize a “On-The-Go” service pod, cutting customer wait times by 94.8%.</p>
-    </div>
+      <div class="project-section">
+        <h2>Project Overview</h2>
+        <p>Used newsvendor and queuing-theory models to optimize an “On-The-Go” service pod, cutting customer wait times by 94.8%.</p>
+      </div>
+      <div class="project-section">
+        <h2>The Challenge</h2>
+        <p>High utilization (u = 93.6%) on two servers caused mean queue times of 7.43 min, degrading service experience.</p>
+      </div>
+      <div class="project-section">
+        <h2>Solution Approach</h2>
+        <p>Forecasted demand (58.6 orders/hr, CVa = 0.739); calculated safety stock for consumables; applied M/M/m queue formulas to evaluate adding servers.</p>
+      </div>
+      <div class="project-section">
+        <h2>Results & Impact</h2>
+        <p>Adding a third server reduced average wait to 0.39 min (94.8% reduction), while safety-stock policies cut stock-out risk by 78%.</p>
+      </div>
+    </article>
 
-    <div class="project-section">
-      <h2>The Challenge</h2>
-      <p>High utilization (u = 93.6%) on two servers caused mean queue times of 7.43 min, degrading service experience.</p>
-    </div>
-
-    <div class="project-section">
-      <h2>Solution Approach</h2>
-      <ul>
-        <li>Forecasted demand (58.6 orders/hr, CVa = 0.739); calculated safety stock for consumables.</li>
-        <li>Applied M/M/m queue formulas to evaluate adding servers.</li>
-      </ul>
-    </div>
-
-    <div class="project-section">
-      <h2>Results &amp; Impact</h2>
-      <p>Adding a third server reduced average wait to 0.39 min (94.8% reduction), while safety-stock policies cut stock-out risk by 78%.</p>
-    </div>
-
-    <aside class="project-details-sidebar">
-      <h3>Project Details</h3>
-      <p><strong>Tools Used:</strong> Queueing Theory, Operations Research, Simulation</p>
-      <p><strong>Key Impact:</strong> 94.8% reduction in customer wait time</p>
-
-      <h3>More Projects</h3>
-      <ul>
-        <li><a href="retail-campaign.html">Retail Campaign Optimization</a></li>
-        <li><a href="ev-infrastructure.html">EV Infrastructure Planning</a></li>
-        <li><a href="airbnb-superhost.html">Airbnb Superhost Analysis</a></li>
-        <li><a href="bankruptcy-prediction.html">Bankruptcy Prediction Model</a></li>
-        <li><a href="market-expansion.html">Market Expansion Study</a></li>
-        <li><a href="otg-simulation.html" class="active">OTG Pod Operations Simulation</a></li>
-      </ul>
+    <aside class="sidebar">
+      <div class="card">
+        <h3>Project Details</h3>
+        <p><strong>Tools Used:</strong> Queueing Theory, Operations Research, Simulation</p>
+        <p><strong>Key Impact:</strong> 94.8% reduction in customer wait time</p>
+      </div>
+      <div class="card more-projects">
+        <h3>More Projects</h3>
+        <ul>
+          <li><a href="retail-campaign.html">Retail Campaign Optimization</a></li>
+          <li><a href="ev-infrastructure.html">EV Infrastructure Planning</a></li>
+          <li><a href="airbnb-superhost.html">Airbnb Superhost Analysis</a></li>
+          <li><a href="bankruptcy-prediction.html">Bankruptcy Prediction Model</a></li>
+          <li><a href="market-expansion.html">Market Expansion Study</a></li>
+          <li><a href="otg-pod-simulation.html" class="active">OTG Pod Operations Simulation</a></li>
+        </ul>
+      </div>
     </aside>
-  </section>
+  </div>
 
-  <footer>
-    <p>© 2025 Sai Nithin Godi. All rights reserved.</p>
-  </footer>
+  <footer>© 2025 Sai Nithin Godi. All rights reserved.</footer>
 </body>
 </html>
