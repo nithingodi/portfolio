@@ -1,3 +1,6 @@
+body {
+  background-color: pink !important;
+}
 /* Reset and base */
 * {
   margin: 0;
