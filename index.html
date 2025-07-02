@@ -1,277 +1,319 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sai Nithin Godi | Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">Portfolio</div>
-    <ul class="nav-links">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="btn">Contact Me</a>
-  </nav>
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Sai Nithin Godi</h1>
-      <h2>Business &amp; Data Analyst</h2>
-      <p>
-        A data-driven Business Analyst with 2+ years of experience in
-        manufacturing and analytics consulting. Skilled in Python, Excel VBA,
-        Tableau, and SQL, with a proven track record of improving supply chain
-        efficiency.
-      </p>
-      <div class="hero-cta">
-        <div class="hero-ctas">
-  <a href="#projects" class="btn">View Projects</a>
-  <a href="https://linkedin.com/in/nithingodi" target="_blank" class="social-btn">
-    <img src="assets/linkedin-icon.png" alt="LinkedIn">
-  </a>
-</div>
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
 
-        <a
-          href="https://linkedin.com/in/nithingodi"
-          class="btn btn-icon"
-          target="_blank"
-        >
-          <!-- swap in your SVG or PNG -->
-          <img src="assets/linkedin-icon.png" alt="LinkedIn" />
-        </a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="assets/profile.png" alt="Sai Nithin Godi" />
-    </div>
-  </section>
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+   <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Sai Nithin Godi | Portfolio</title>
+     <link rel="stylesheet" href="styles.css" />
+   </head>
+   <body>
+     <!-- Navbar -->
+     <nav>
+       <h1>Sai Nithin Godi</h1>
+       <ul class="nav-links">
+         <li><a href="#about" class="active">About</a></li>
+         <li><a href="#experience">Experience</a></li>
+         <li><a href="#projects">Projects</a></li>
+         <li><a href="#skills">Skills</a></li>
+         <li><a href="#contact">Contact</a></li>
+       </ul>
+       <a href="#contact" class="btn">Hire Me</a>
+     </nav>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="project-grid">
-      
-      <!-- EV Infrastructure -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="assets/project-ev.png" alt="EV Infrastructure Planning" />
-          <a
-            href="projects/ev-infrastructure.html"
-            class="overlay-btn"
-            >View Details</a
-          >
-        </div>
-        <div class="project-content">
-          <h3>EV Infrastructure Planning</h3>
-          <p>
-            Mapped 200K+ EV records and built dashboards for underserved
-            Washington counties.
-          </p>
-        </div>
-      </div>
+     <!-- About -->
+     <section id="about" class="about">
+       <h1>Sai Nithin Godi</h1>
+       <h2>Analytics Consultant</h2>
+       <p>I am a dynamic analytics consultant with an MS in Business Analytics from Purdue University (2025) and a BTech in Electronics and Communication Engineering from Jawaharlal Nehru Technological University Hyderabad (2023). With over two years of experience, I’ve honed my skills in product analytics, marketing optimization, and operational efficiency at Aaditri UPVC Windows, a startup where I progressed from intern to manager. My recent role as a Data Scientist at Meijer (Jan 2025 – May 2025) saw me model 400K+ user records, driving an 8-10% revenue uplift ($1.2M/year) through feature-engineered regression and T-Learner models. Passionate about data-driven innovation, I excel in Python, SQL, Tableau, and emerging tools like LangChain, aiming to lead transformative analytics projects at FAANG with a blend of technical prowess and strategic insight.</p>
+       <button class="toggle-btn" onclick="toggleAbout()">Read More</button>
+       <div class="about-toggle" id="about-toggle">
+         <p>Emerging from a family business background, I joined Aaditri UPVC Windows in 2022, evolving from a Junior Analyst to a Product Operations Analyst by July 2024. I engineered SLA flagging logic, cutting quote turnaround by 2.3 days, and built dashboards to map quote lifecycles, enhancing operational transparency. At Meijer, I uncovered high-impact campaign drivers (p < 0.05) and projected a $1.2M revenue gain, showcasing my ability to translate data into action. My academic projects, including a GenAI QA Assistant with LangChain and an 84% F1 churn model with XGBoost, reflect my commitment to cutting-edge analytics. I’m eager to bring this expertise to FAANG, driving product and marketing strategies with precision and impact.</p>
+       </div>
+     </section>
 
-      <!-- Airbnb Superhost -->
-      <div class="project-card">
-        <div class="project-image">
-          <img
-            src="assets/project-airbnb.png"
-            alt="Airbnb Superhost Program Analysis"
-          />
-          <a
-            href="projects/airbnb-superhost.html"
-            class="overlay-btn"
-            >View Details</a
-          >
-        </div>
-        <div class="project-content">
-          <h3>Airbnb Superhost Program Analysis</h3>
-          <p>
-            Lasso regression showed each 1% rise in Superhost share increases
-            $264.26/month in revenue.
-          </p>
-        </div>
-      </div>
+     <!-- Experience -->
+     <section id="experience" class="experience">
+       <h2>Professional Experience</h2>
+       <div class="exp-group">
+         <h3>Data Scientist | Meijer - USA</h3>
+         <div class="domain-grid">
+           <div class="domain-card">
+             <h4>Product</h4>
+             <ul>
+               <li>Improved campaign revenue forecasting by modeling 400K+ user records with feature-engineered regression and EDA, uncovering three high-impact drivers (p < 0.05) that guided offer design and projected an 8-10% uplift.</li>
+             </ul>
+           </div>
+           <div class="domain-card">
+             <h4>Marketing</h4>
+             <ul>
+               <li>Estimated incremental campaign impact using T-Learner models (Linear, Random Forest, XGBoost) on pre-treatment variables, deriving a $0.25 uplift/customer and projecting $1.2M/year in revenue gains.</li>
+             </ul>
+           </div>
+         </div>
+       </div>
+       <div class="exp-group">
+         <h3>Product Operations Analyst | Aaditri UPVC Windows (Startup) - India</h3>
+         <div class="domain-grid">
+           <div class="domain-card">
+             <h4>Product</h4>
+             <ul>
+               <li>Mapped full quote lifecycle across manual workflows, exposing experience gaps; built dashboards to track quote initiation, approval, and close time per user journey.</li>
+               <li>Engineered product journey profiles by linking SKU config, task routing, and delay logs, identifying bottlenecks in large-frame workflows.</li>
+               <li>Designed product performance heatmaps using task logs and defect patterns, prioritizing redesign of low-margin SKUs with fulfillment lags.</li>
+               <li>Maintained a product documentation archive to inform downstream GenAI QA projects, standardizing quote steps and routing logic.</li>
+             </ul>
+           </div>
+           <div class="domain-card">
+             <h4>Marketing</h4>
+             <ul>
+               <li>Simulated pricing elasticity by modeling BOM-linked margin risks and quote acceptance trends, reducing underpricing in mid-tier SKUs by 6%.</li>
+               <li>Built persona-driven sales logic using demographic tagging and historical conversion paths, improving engagement across three lead segments.</li>
+               <li>Developed pricing optimization tools in Excel with competitive benchmarking, influencing a 9% higher average quote value for custom windows.</li>
+               <li>Created dashboards to track price approval lags and discount impact by SKU class, flagging risk-prone quote types.</li>
+             </ul>
+           </div>
+           <div class="domain-card">
+             <h4>Operations</h4>
+             <ul>
+               <li>Built standardized SOP documentation for quote, BOM, and SLA workflows using Excel, formalizing sales-ops handoffs and improving new hire onboarding.</li>
+               <li>Engineered delay monitoring tools by tracking timestamp gaps across POS, dispatch logs, and field visits, shortening quote-to-close cycle by 2.3 days.</li>
+               <li>Managed cost simulation sheets with dynamic BOM and SKU tier pricing, validating quote feasibility for high-value custom SKUs.</li>
+               <li>Created quote lifecycle heatmaps by segmenting fulfillment delays by zone, SKU type, and approval stage, driving SLA adherence policy changes.</li>
+             </ul>
+           </div>
+       </div>
+       <div class="exp-group">
+         <h3>Junior Product Operations Analyst | Aaditri UPVC Windows (Startup) - India</h3>
+         <div class="domain-grid">
+           <div class="domain-card">
+             <h4>Product</h4>
+             <ul>
+               <li>Built quote delay trackers by timestamping field visits, approvals, and task completions, improving SLA awareness.</li>
+               <li>Created Excel-based BOM estimators with logic tied to manual routing and product build, validating feasibility in live quoting.</li>
+               <li>Segmented orders by delay patterns and SKU complexity, creating exception rules for field escalation.</li>
+             </ul>
+           </div>
+           <div class="domain-card">
+             <h4>Marketing</h4>
+             <ul>
+               <li>Built Excel tools to simulate BOM-driven pricing scenarios under volume discounts, enabling field sales to estimate quote outcomes.</li>
+               <li>Tracked regional win/loss trends across pricing tiers, reducing margin leakage by 4% through over-discounting identification.</li>
+               <li>Created quote persona templates based on approval urgency, price sensitivity, and SKU mix, supporting field segmentation.</li>
+             </ul>
+           </div>
+           <div class="domain-card">
+             <h4>Operations</h4>
+             <ul>
+               <li>Flagged delays across sales-dispatch handoff using timestamp analysis, improving reallocation rates and response times in peak cycles.</li>
+             </ul>
+           </div>
+         </div>
+       </div>
+       <div class="exp-group">
+         <h3>Junior Marketing Analyst | Aaditri UPVC Windows (Startup) - India</h3>
+         <div class="domain-grid">
+           <div class="domain-card">
+             <h4>Marketing</h4>
+             <ul>
+               <li>Built weekly dashboards to track referral traffic, campaign source tagging, and lead qualification rates, providing visibility into early-stage leakage across three regions.</li>
+               <li>Created Excel-based ROI estimators for campaign spend vs. order value, enabling faster post-campaign insights.</li>
+               <li>Flagged abandoned quotes using timestamp delays and missing approvals, improving average callback time by 1.4 days.</li>
+             </ul>
+           </div>
+         </div>
+       </div>
+     </section>
 
-      <!-- Bankruptcy -->
-      <div class="project-card">
-        <div class="project-image">
-          <img
-            src="assets/project-bankruptcy.png"
-            alt="Bankruptcy Prediction Model"
-          />
-          <a
-            href="projects/bankruptcy-model.html"
-            class="overlay-btn"
-            >View Details</a
-          >
-        </div>
-        <div class="project-content">
-          <h3>Bankruptcy Prediction Model</h3>
-          <p>
-            Built and compared 8 ML models; best ensemble had lowest false
-            negatives.
-          </p>
-        </div>
-      </div>
+     <!-- Projects -->
+     <section id="projects" class="projects">
+       <h2>Key Projects</h2>
+       <div class="projects-grid">
+         <div class="project-card">
+           <img src="assets/project-ev.png" alt="EV Infrastructure Planning">
+           <div class="content">
+             <h3>EV Infrastructure Planning</h3>
+             <p>Mapped 200K+ EV records for strategic planning.</p>
+             <a href="projects/ev-infrastructure.html">View Details</a>
+           </div>
+         </div>
+         <div class="project-card">
+           <img src="assets/project-airbnb.png" alt="Airbnb Superhost Program Analysis">
+           <div class="content">
+             <h3>Airbnb Superhost Program Analysis</h3>
+             <p>Linked 1% Superhost increase to $264.26/month revenue.</p>
+             <a href="projects/airbnb-superhost.html">View Details</a>
+           </div>
+         </div>
+         <div class="project-card">
+           <img src="assets/project-bankruptcy.png" alt="Bankruptcy Prediction Model">
+           <div class="content">
+             <h3>Bankruptcy Prediction Model</h3>
+             <p>Minimized false negatives with advanced ML ensemble.</p>
+             <a href="projects/bankruptcy-model.html">View Details</a>
+           </div>
+         </div>
+         <div class="project-card">
+           <img src="assets/project-market.png" alt="Market Expansion Study">
+           <div class="content">
+             <h3>Market Expansion Study</h3>
+             <p>Identified optimal markets with 1.2M+ foot-traffic data.</p>
+             <a href="projects/market-expansion.html">View Details</a>
+           </div>
+         </div>
+         <div class="project-card">
+           <img src="assets/project-otg.png" alt="OTG Pod Operations Simulation">
+           <div class="content">
+             <h3>OTG Pod Operations Simulation</h3>
+             <p>Reduced wait times by 94.8% with optimized server allocation.</p>
+             <a href="projects/otg-pod-simulation.html">View Details</a>
+           </div>
+         </div>
+         <div class="project-card">
+           <img src="assets/project-inventory.png" alt="Inventory Optimization Dashboard">
+           <div class="content">
+             <h3>Inventory Optimization Dashboard</h3>
+             <p>Reduced stockouts by 24% with advanced classification.</p>
+             <a href="projects/inventory-optimization.html">View Details</a>
+           </div>
+         </div>
+         <div class="project-card">
+           <img src="assets/project-churn.png" alt="Churn + LTV Forecasting">
+           <div class="content">
+             <h3>Churn + LTV Forecasting</h3>
+             <p>Achieved 84% F1 score for retention strategies with ±$12 MAE.</p>
+             <a href="projects/churn-ltv.html">View Details</a>
+           </div>
+         </div>
+         <div class="project-card">
+           <img src="assets/project-pricing.png" alt="Pricing Conjoint Simulator">
+           <div class="content">
+             <h3>Pricing Conjoint Simulator</h3>
+             <p>Determined $12 threshold for premium features.</p>
+             <a href="projects/pricing-conjoint.html">View Details</a>
+           </div>
+         </div>
+         <div class="project-card">
+           <img src="assets/project-phantom.png" alt="Phantom Inventory Detector">
+           <div class="content">
+             <h3>Phantom Inventory Detector</h3>
+             <p>Improved stock accuracy by 21% with real-time detection.</p>
+             <a href="projects/phantom-inventory.html">View Details</a>
+           </div>
+         </div>
+         <div class="project-card">
+           <img src="assets/project-ux.png" alt="UX Funnel + A/B Variant Analysis">
+           <div class="content">
+             <h3>UX Funnel + A/B Variant Analysis</h3>
+             <p>Flagged 36% Cart-to-Checkout drop with rage-click metrics.</p>
+             <a href="projects/ux-funnel-ab-testing.html">View Details</a>
+           </div>
+         </div>
+         <div class="project-card">
+           <img src="assets/project-alert.png" alt="Product Alert System + BI Portal">
+           <div class="content">
+             <h3>Product Alert System + BI Portal</h3>
+             <p>Built KPI monitoring with alerts for usage dips.</p>
+             <a href="projects/product-alert-system.html">View Details</a>
+           </div>
+         </div>
+         <div class="project-card">
+           <img src="assets/project-genai.png" alt="GenAI QA Assistant for Product Docs">
+           <div class="content">
+             <h3>GenAI QA Assistant for Product Docs</h3>
+             <p>Transformed SOPs with LangChain and FAISS.</p>
+             <a href="projects/genai-qa-assistant.html">View Details</a>
+           </div>
+         </div>
+       </div>
+     </section>
 
-      <!-- Market Expansion -->
-      <div class="project-card">
-        <div class="project-image">
-          <img
-            src="assets/project-market.png"
-            alt="Market Expansion Study"
-          />
-          <a
-            href="projects/market-expansion.html"
-            class="overlay-btn"
-            >View Details</a
-          >
-        </div>
-        <div class="project-content">
-          <h3>Market Expansion Study</h3>
-          <p>
-            Analyzed 1.2M+ foot-traffic records in Missouri; found Wright
-            County with top demand-to-competitor ratio.
-          </p>
-        </div>
-      </div>
+     <!-- Skills -->
+     <section id="skills" class="skills">
+       <h2>Technical Skills</h2>
+       <div class="skills-grid">
+         <div class="skill-card">
+           <img src="assets/python.png" alt="Python">
+           <h4>Product Analytics</h4>
+           <p>Tools: Python, Tableau, Excel, Streamlit, LangChain, FAISS, Power BI. Expertise in funnel drop-off detection, KPI trigger logic, feature usage analysis, rage-click metrics, A/B testing, uplift modeling, SLA breach prediction, product journey mapping, and GenAI-powered QA.</p>
+         </div>
+         <div class="skill-card">
+           <img src="assets/sql.png" alt="SQL">
+           <h4>Marketing Analytics</h4>
+           <p>Tools: SQL, Tableau, Python, Excel, R, Power BI. Proficiency in price elasticity modeling, LTV segmentation, cluster analysis, behavioral targeting, campaign attribution, conjoint analysis, funnel optimization, and persona development.</p>
+         </div>
+         <div class="skill-card">
+           <img src="assets/excel.png" alt="Excel">
+           <h4>Operations & Tools</h4>
+           <p>Tools: Excel VBA, Git, VS Code, Google Sheets, JIRA, Confluence. Skilled in SOP standardization, delay monitoring, cost simulation, heatmapping, stakeholder dashboards, and GTM experimentation.</p>
+         </div>
+       </div>
+     </section>
 
-      <!-- OTG Pod Simulation -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="assets/project-otg.png" alt="OTG Pod Operations Simulation" />
-          <a
-            href="projects/otg-pod-simulation.html"
-            class="overlay-btn"
-            >View Details</a
-          >
-        </div>
-        <div class="project-content">
-          <h3>OTG Pod Operations Simulation</h3>
-          <p>
-            Identified billing bottleneck; cut wait time by 94.8% with a third
-            server.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+     <!-- Contact -->
+     <section id="contact" class="contact">
+       <h2>Contact Me</h2>
+       <form>
+         <input type="text" placeholder="Your Name" required />
+         <input type="email" placeholder="Your Email" required />
+         <textarea placeholder="Your Message" rows="4" required></textarea>
+         <button type="submit" class="btn">Send Message</button>
+       </form>
+     </section>
 
-  <!-- EXPERIENCE -->
-<!-- EXPERIENCE -->
-<section id="experience">
-  <h2 class="section-title">Work Experience</h2>
+     <!-- Footer -->
+     <footer>
+       © 2025 Sai Nithin Godi. All rights reserved.
+     </footer>
 
-  <div class="experience-cards">
-    <!-- Card 1 -->
-    <div class="experience-card">
-      <div class="exp-image">
-        <img src="assets/exp-purdue.png" alt="Meijer Practicum">
-      </div>
-      <div class="exp-content">
-        <h3>Meijer (Industry Practicum, Purdue)</h3>
-        <div class="exp-location">Data Analyst</div>
-        <span class="exp-date">Jan 2025 – Apr 2025</span>
-        <ul class="exp-bullets">
-          <li>Built and validated linear, polynomial, and uplift models using Python (scikit-learn, XGBoost, pandas).</li>
-          <li>Engineered features from pre- and during-campaign data across multiple datasets (∼400K records).</li>
-          <li>Uncovered $22.1K/month in predicted uplift by classifying customer groups using T-Learner uplift modeling.</li>
-          <li>Created T-Learner-based uplift models (Linear, Random Forest, XGBoost) and evaluated impact using Qini curves and uplift segmentation logic.</li>
-          <li>Quantified marginal impact of digital engagement, revealing that a 1-day increase in claim behavior correlated to ∼$41 more in campaign sales.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="experience-card">
-      <div class="exp-image">
-        <img src="assets/exp-operations.png" alt="Business Operations Analyst">
-      </div>
-      <div class="exp-content">
-        <h3>Aaditri UPVC Windows</h3>
-        <div class="exp-location">Business Operations Analyst</div>
-        <span class="exp-date">Oct 2022 – Jul 2024</span>
-        <ul class="exp-bullets">
-          <li>Applied LEAN/Six Sigma to streamline supply chain, cutting costs by ₹20,000 and boosting margins by 10%.</li>
-          <li>Analyzed production data to optimize workflows, reducing material waste by 8% in window manufacturing.</li>
-          <li>Built Excel VBA tools for real-time inventory tracking, improving stock accuracy by 15%.</li>
-          <li>Designed Tableau dashboards for KPIs, enhancing order fulfillment efficiency by 12%.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="experience-card">
-      <div class="exp-image">
-        <img src="assets/exp-intern.png" alt="Operations Intern">
-      </div>
-      <div class="exp-content">
-        <h3>Aaditri UPVC Windows</h3>
-        <div class="exp-location">Operations Intern</div>
-        <span class="exp-date">Jun 2022 – Sep 2022</span>
-        <ul class="exp-bullets">
-          <li>Collected and analyzed production data across cutting, assembly, and glazing stages, generating weekly reports to identify error rates and quality control issues.</li>
-          <li>Worked alongside plant supervisors to monitor KPIs (units per shift, rejection rates, rework time), contributing to a 10% reduction in product defects.</li>
-          <li>Developed Excel tools to track supplier performance, improving vendor selection processes and reducing lead times.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2 class="section-title">Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">Data Analysis</div>
-      <div class="skill-card">Business Intelligence</div>
-      <div class="skill-card">Data Visualization</div>
-      <div class="skill-card">SQL &amp; Database Management</div>
-      <div class="skill-card">Python Programming</div>
-      <div class="skill-card">Project Management</div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact-section section-dark">
-    <h2 class="section-title">Get In Touch</h2>
-    <div class="contact-card">
-      <p><strong>Email:</strong> nithingodi3@gmail.com</p>
-      <p>
-        <strong>LinkedIn:</strong>
-        <a href="https://linkedin.com/in/nithingodi" target="_blank"
-          >/in/nithingodi</a
-        >
-      </p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Sai Nithin Godi. All rights reserved.
-  </footer>
-
-  <!-- Smooth-scroll & active-link -->
-  <script>
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach((l) =>
-      l.addEventListener('click', (e) => {
-        links.forEach((x) => x.classList.remove('active'));
-        e.target.classList.add('active');
-      })
-    );
-  </script>
-</body>
-</html>
+     <script>
+       function toggleAbout() {
+         const toggle = document.getElementById('about-toggle');
+         toggle.classList.toggle('active');
+       }
+       const links = document.querySelectorAll('.nav-links a');
+       links.forEach(l => l.addEventListener('click', (e) => {
+         links.forEach(x => x.classList.remove('active'));
+         e.target.classList.add('active');
+       }));
+     </script>
+   </body>
+   </html>

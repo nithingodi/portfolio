@@ -42,7 +42,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bankruptcy Prediction Model</title>
+  <title>Churn + LTV Forecasting</title>
   <style>
     body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
     .project-hero { position: relative; background-size: cover; background-position: center; min-height: 360px; display: flex; align-items: center; justify-content: center; }
@@ -62,10 +62,10 @@
   </style>
 </head>
 <body>
-  <section class="project-hero" style="background-image: url('../assets/project-bankruptcy.png');">
+  <section class="project-hero" style="background-image: url('../assets/project-churn.png');">
     <div class="project-hero-content">
-      <h1>Bankruptcy Prediction Model</h1>
-      <p>Minimized false negatives with advanced ML ensemble.</p>
+      <h1>Churn + LTV Forecasting</h1>
+      <p>Achieved 84% F1 score for retention strategies with ±$12 MAE.</p>
     </div>
   </section>
   <div class="project-container">
@@ -73,11 +73,11 @@
       <a href="../index.html" class="back-link">← Back to Portfolio</a>
       <div class="project-section">
         <h2>Overview</h2>
-        <p>Developed a robust model to predict bankruptcy, comparing eight machine learning algorithms, with an ensemble approach minimizing false negatives to enhance financial risk assessment accuracy.</p>
+        <p>Forecasted customer churn and lifetime value using XGBoost, achieving an 84% F1 score and ±$12 MAE, providing actionable insights for retention strategies.</p>
       </div>
       <div class="project-section">
         <h2>Methodology</h2>
-        <p>Utilized Python with Scikit-learn to preprocess financial data, trained models including Logistic Regression and Random Forest, and implemented a voting classifier to optimize performance, validated with cross-validation.</p>
+        <p>Processed behavioral and demographic data with Python, trained an XGBoost model with SHAP for feature importance, and validated predictions with cross-validation techniques.</p>
       </div>
     </div>
     <div class="sidebar">
@@ -85,7 +85,8 @@
         <h3>Tools</h3>
         <ul class="tag-list">
           <li>Python</li>
-          <li>Scikit-learn</li>
+          <li>XGBoost</li>
+          <li>SHAP</li>
         </ul>
       </div>
     </div>

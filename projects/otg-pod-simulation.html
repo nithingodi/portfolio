@@ -1,73 +1,94 @@
-<!DOCTYPE html>
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>OTG Pod Operations Simulation | Sai Nithin Godi</title>
-  <link rel="stylesheet" href="../styles.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTG Pod Operations Simulation</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+    .project-hero { position: relative; background-size: cover; background-position: center; min-height: 360px; display: flex; align-items: center; justify-content: center; }
+    .project-hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
+    .project-hero-content { position: relative; text-align: center; color: #fff; padding: 0 1rem; }
+    .project-container { display: grid; grid-template-columns: 1fr 300px; gap: 2rem; max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+    .project-detail { background: #1e293b; border-radius: 8px; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1.5rem; color: #38bdf8; }
+    .back-link:hover { text-decoration: underline; }
+    .project-section { margin-top: 1.5rem; }
+    .project-section h2 { color: #38bdf8; margin-bottom: 0.75rem; }
+    .project-section p { color: #cbd5e1; line-height: 1.6; }
+    .sidebar .card { background: #1e293b; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; }
+    .sidebar .card h3 { color: #e2e8f0; margin-bottom: 0.75rem; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; }
+    .tag-list li { background: #0f172a; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.85rem; color: #38bdf8; }
+  </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">Portfolio</div>
-    <ul class="nav-links">
-      <li><a href="../index.html#home">Home</a></li>
-      <li><a href="../index.html#projects" class="active">Projects</a></li>
-      <li><a href="../index.html#experience">Experience</a></li>
-      <li><a href="../index.html#skills">Skills</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="btn">Contact Me</a>
-  </nav>
-
-  <header class="project-hero" style="background-image:url('../assets/otg-simulation.png')">
+  <section class="project-hero" style="background-image: url('../assets/project-otg.png');">
     <div class="project-hero-content">
       <h1>OTG Pod Operations Simulation</h1>
-      <p>Identified billing bottleneck; cut wait time by 94.8% with a third server.</p>
+      <p>Reduced wait times by 94.8% with optimized server allocation.</p>
     </div>
-  </header>
-
+  </section>
   <div class="project-container">
-    <article class="project-detail">
-      <a href="../index.html#projects" class="back-link">← Back to Projects</a>
-
+    <div class="project-detail">
+      <a href="../index.html" class="back-link">← Back to Portfolio</a>
       <div class="project-section">
-        <h2>Project Overview</h2>
-        <p>Used newsvendor and queuing-theory models to optimize an “On-The-Go” service pod, cutting customer wait times by 94.8%.</p>
+        <h2>Overview</h2>
+        <p>Simulated OTG pod operations to optimize server allocation, reducing wait times by 94.8% and resolving a critical billing bottleneck through queueing theory analysis.</p>
       </div>
       <div class="project-section">
-        <h2>The Challenge</h2>
-        <p>High utilization (u = 93.6%) on two servers caused mean queue times of 7.43 min, degrading service experience.</p>
+        <h2>Methodology</h2>
+        <p>Implemented a Python script using SimPy to model queue dynamics, tested various server configurations, and validated results with statistical analysis to determine the optimal solution.</p>
       </div>
-      <div class="project-section">
-        <h2>Solution Approach</h2>
-        <p>Forecasted demand (58.6 orders/hr, CVa = 0.739); calculated safety stock for consumables; applied M/M/m queue formulas to evaluate adding servers.</p>
-      </div>
-      <div class="project-section">
-        <h2>Results & Impact</h2>
-        <p>Adding a third server reduced average wait to 0.39 min (94.8% reduction), while safety-stock policies cut stock-out risk by 78%.</p>
-      </div>
-    </article>
-
-    <aside class="sidebar">
+    </div>
+    <div class="sidebar">
       <div class="card">
-        <h3>Project Details</h3>
-        <p><strong>Tools Used:</strong> Queueing Theory, Operations Research, Simulation</p>
-        <p><strong>Key Impact:</strong> 94.8% reduction in customer wait time</p>
-      </div>
-      <div class="card more-projects">
-        <h3>More Projects</h3>
-        <ul>
-         
-          <li><a href="ev-infrastructure.html">EV Infrastructure Planning</a></li>
-          <li><a href="airbnb-superhost.html">Airbnb Superhost Analysis</a></li>
-          <li><a href="bankruptcy-model.html">Bankruptcy Prediction Model</a></li>
-          <li><a href="market-expansion.html">Market Expansion Study</a></li>
-          <li><a href="otg-pod-simulation.html" class="active">OTG Pod Operations Simulation</a></li>
+        <h3>Tools</h3>
+        <ul class="tag-list">
+          <li>Python</li>
+          <li>SimPy</li>
         </ul>
       </div>
-    </aside>
+    </div>
   </div>
-
-  <footer>© 2025 Sai Nithin Godi. All rights reserved.</footer>
 </body>
 </html>

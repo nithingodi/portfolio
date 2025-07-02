@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sai Nithin Godi | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn">Contact Me</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Sai Nithin Godi</h1>
+      <h2>Business &amp; Data Analyst</h2>
+      <p>
+        A data-driven Business Analyst with 2+ years of experience in
+        manufacturing and analytics consulting. Skilled in Python, Excel VBA,
+        Tableau, and SQL, with a proven track record of improving supply chain
+        efficiency.
+      </p>
+      <div class="hero-cta">
+        <div class="hero-ctas">
+  <a href="#projects" class="btn">View Projects</a>
+  <a href="https://linkedin.com/in/nithingodi" target="_blank" class="social-btn">
+    <img src="assets/linkedin-icon.png" alt="LinkedIn">
+  </a>
+</div>
+
+        <a
+          href="https://linkedin.com/in/nithingodi"
+          class="btn btn-icon"
+          target="_blank"
+        >
+          <!-- swap in your SVG or PNG -->
+          <img src="assets/linkedin-icon.png" alt="LinkedIn" />
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/profile.png" alt="Sai Nithin Godi" />
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
+      
+      <!-- EV Infrastructure -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/project-ev.png" alt="EV Infrastructure Planning" />
+          <a
+            href="projects/ev-infrastructure.html"
+            class="overlay-btn"
+            >View Details</a
+          >
+        </div>
+        <div class="project-content">
+          <h3>EV Infrastructure Planning</h3>
+          <p>
+            Mapped 200K+ EV records and built dashboards for underserved
+            Washington counties.
+          </p>
+        </div>
+      </div>
+
+      <!-- Airbnb Superhost -->
+      <div class="project-card">
+        <div class="project-image">
+          <img
+            src="assets/project-airbnb.png"
+            alt="Airbnb Superhost Program Analysis"
+          />
+          <a
+            href="projects/airbnb-superhost.html"
+            class="overlay-btn"
+            >View Details</a
+          >
+        </div>
+        <div class="project-content">
+          <h3>Airbnb Superhost Program Analysis</h3>
+          <p>
+            Lasso regression showed each 1% rise in Superhost share increases
+            $264.26/month in revenue.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bankruptcy -->
+      <div class="project-card">
+        <div class="project-image">
+          <img
+            src="assets/project-bankruptcy.png"
+            alt="Bankruptcy Prediction Model"
+          />
+          <a
+            href="projects/bankruptcy-model.html"
+            class="overlay-btn"
+            >View Details</a
+          >
+        </div>
+        <div class="project-content">
+          <h3>Bankruptcy Prediction Model</h3>
+          <p>
+            Built and compared 8 ML models; best ensemble had lowest false
+            negatives.
+          </p>
+        </div>
+      </div>
+
+      <!-- Market Expansion -->
+      <div class="project-card">
+        <div class="project-image">
+          <img
+            src="assets/project-market.png"
+            alt="Market Expansion Study"
+          />
+          <a
+            href="projects/market-expansion.html"
+            class="overlay-btn"
+            >View Details</a
+          >
+        </div>
+        <div class="project-content">
+          <h3>Market Expansion Study</h3>
+          <p>
+            Analyzed 1.2M+ foot-traffic records in Missouri; found Wright
+            County with top demand-to-competitor ratio.
+          </p>
+        </div>
+      </div>
+
+      <!-- OTG Pod Simulation -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/project-otg.png" alt="OTG Pod Operations Simulation" />
+          <a
+            href="projects/otg-pod-simulation.html"
+            class="overlay-btn"
+            >View Details</a
+          >
+        </div>
+        <div class="project-content">
+          <h3>OTG Pod Operations Simulation</h3>
+          <p>
+            Identified billing bottleneck; cut wait time by 94.8% with a third
+            server.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2 class="section-title">Work Experience</h2>
+
+  <div class="experience-cards">
+    <!-- Card 1 -->
+    <div class="experience-card">
+      <div class="exp-image">
+        <img src="assets/exp-purdue.png" alt="Meijer Practicum">
+      </div>
+      <div class="exp-content">
+        <h3>Meijer (Industry Practicum, Purdue)</h3>
+        <div class="exp-location">Data Analyst</div>
+        <span class="exp-date">Jan 2025 – Apr 2025</span>
+        <ul class="exp-bullets">
+          <li>Built and validated linear, polynomial, and uplift models using Python (scikit-learn, XGBoost, pandas).</li>
+          <li>Engineered features from pre- and during-campaign data across multiple datasets (∼400K records).</li>
+          <li>Uncovered $22.1K/month in predicted uplift by classifying customer groups using T-Learner uplift modeling.</li>
+          <li>Created T-Learner-based uplift models (Linear, Random Forest, XGBoost) and evaluated impact using Qini curves and uplift segmentation logic.</li>
+          <li>Quantified marginal impact of digital engagement, revealing that a 1-day increase in claim behavior correlated to ∼$41 more in campaign sales.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="experience-card">
+      <div class="exp-image">
+        <img src="assets/exp-operations.png" alt="Business Operations Analyst">
+      </div>
+      <div class="exp-content">
+        <h3>Aaditri UPVC Windows</h3>
+        <div class="exp-location">Business Operations Analyst</div>
+        <span class="exp-date">Oct 2022 – Jul 2024</span>
+        <ul class="exp-bullets">
+          <li>Applied LEAN/Six Sigma to streamline supply chain, cutting costs by ₹20,000 and boosting margins by 10%.</li>
+          <li>Analyzed production data to optimize workflows, reducing material waste by 8% in window manufacturing.</li>
+          <li>Built Excel VBA tools for real-time inventory tracking, improving stock accuracy by 15%.</li>
+          <li>Designed Tableau dashboards for KPIs, enhancing order fulfillment efficiency by 12%.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="experience-card">
+      <div class="exp-image">
+        <img src="assets/exp-intern.png" alt="Operations Intern">
+      </div>
+      <div class="exp-content">
+        <h3>Aaditri UPVC Windows</h3>
+        <div class="exp-location">Operations Intern</div>
+        <span class="exp-date">Jun 2022 – Sep 2022</span>
+        <ul class="exp-bullets">
+          <li>Collected and analyzed production data across cutting, assembly, and glazing stages, generating weekly reports to identify error rates and quality control issues.</li>
+          <li>Worked alongside plant supervisors to monitor KPIs (units per shift, rejection rates, rework time), contributing to a 10% reduction in product defects.</li>
+          <li>Developed Excel tools to track supplier performance, improving vendor selection processes and reducing lead times.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">Data Analysis</div>
+      <div class="skill-card">Business Intelligence</div>
+      <div class="skill-card">Data Visualization</div>
+      <div class="skill-card">SQL &amp; Database Management</div>
+      <div class="skill-card">Python Programming</div>
+      <div class="skill-card">Project Management</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section section-dark">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-card">
+      <p><strong>Email:</strong> nithingodi3@gmail.com</p>
+      <p>
+        <strong>LinkedIn:</strong>
+        <a href="https://linkedin.com/in/nithingodi" target="_blank"
+          >/in/nithingodi</a
+        >
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Sai Nithin Godi. All rights reserved.
+  </footer>
+
+  <!-- Smooth-scroll & active-link -->
+  <script>
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach((l) =>
+      l.addEventListener('click', (e) => {
+        links.forEach((x) => x.classList.remove('active'));
+        e.target.classList.add('active');
+      })
+    );
+  </script>
+</body>
+</html>
